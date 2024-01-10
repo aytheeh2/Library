@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}VIEW-BOOKS {% endblock %}
+
+{% block content %}
+
+<center>
+    id:{{b.id}} <br>
+    Name:{{b.title}} <br>
+    author:{{b.author}} <br>
+    price:{{b.price}} <br>
+    <img height="200px" src="{{b.cover.url}}" alt=""><br>
+    pdf: <a href="{{b.pdf.url}}">download</a>  <br>
+
+</center>
+
+{% endblock %}

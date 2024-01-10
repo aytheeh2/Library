@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Registraion{% endblock %}
+{% block content %}
+<h2>Registraion</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username" id="">
+    <input type="password" name="password" placeholder="password" id="">
+    <input type="password" name="password2" placeholder="confirm password" id="">
+    <input type="text" name="first_name" placeholder="First name" id="">
+    <input type="text" name="last_name" placeholder="last name" id="">
+    <input type="email" name="email" placeholder="email" id="">
+    <input type="submit" name="" id="">
+</form>
+{% endblock %}

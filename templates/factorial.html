@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ADD-BOOKS 2 {% endblock %}
+{% block content %}
+<h2>factorial</h2>
+<form action="" method="post"> 
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="" id=""><br>
+    {% if f %}
+    <label for="">factorial is :{{f}}</label>
+    {% endif %}
+</form>
+
+
+{% endblock %}

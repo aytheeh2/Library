@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}search-BOOKS 2 {% endblock %}
+{% block content %}
+<h2>searh BOOKS </h2>
+<form action="{% url 'books:search' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="search" name="search_for"><br>
+    <input type="submit" name="" id="">
+</form>
+{% if b %}
+<table>
+    {% for i in b %}
+    <tr>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.price}}</td>
+        <td><img src="{{i.cover.url}}" alt="" height="50"></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

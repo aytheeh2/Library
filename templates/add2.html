@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ADD-BOOKS 2 {% endblock %}
+{% block content %}
+<h2>ADD BOOKS 1</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="" id="">
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}VIEW-BOOKS {% endblock %}
+
+{% block content %}
+LIST OF BOOKS
+
+<table border="1" style="border-collapse:collapse;">
+    {% for book in books %}
+    <tr>
+        <th>ID</th>
+        <th>Cover</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Pdf</th>
+        <th>view</th>
+        <th>edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>{{book.id}}</td>
+        <td><img height="100px" src="{{book.cover.url}}" alt=""></td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td><a href="{{book.pdf.url}}">Download</a></td>
+        <td><a href="{% url 'books:book_detail' book.id %}">view</a></td>
+
+        <td><a href="{% url 'books:book_edit' book.id %}">edit</a></td>
+        <td><a href="{% url 'books:book_delete' book.id %}">del</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}
